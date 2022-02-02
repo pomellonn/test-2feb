@@ -1,0 +1,25 @@
+void dfs(int v)
+
+{
+	int  u;
+
+	stack<int> s; 
+	s.push(v); 
+	used[v] = 0; 
+	while (!s.empty()) 
+	{
+		int a = 1; 
+		int i = s.top();
+
+		for (u = 0; u < n && a; )
+			if (gr[i][u] && used[u]) 
+				a = 0;
+			else u++; 
+		if (!a) 
+		{
+			s.push(u); 
+			used[u] = 0;
+		}
+		else s.pop(); 
+	}
+}
