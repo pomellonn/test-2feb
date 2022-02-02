@@ -1,25 +1,18 @@
-void dfs(int v)
-
+void dfs()
 {
-	int  u;
-
-	stack<int> s; 
-	s.push(v); 
-	used[v] = 0; 
-	while (!s.empty()) 
-	{
-		int a = 1; 
-		int i = s.top();
-
-		for (u = 0; u < n && a; )
-			if (graph[i][u] && used[u]) 
-				a = 0;
-			else u++; 
-		if (!a) 
-		{
-			s.push(u); 
-			used[u] = 0;
-		}
-		else s.pop(); 
-	}
+    stack<int> a;
+    a.push(start);
+    while (!a.empty())
+    {
+        int v = s.top();
+        s.pop();
+        for (int i = 0; i < ver[v].size(); ++i)
+        {
+            if (mark[ver[v][i]] == 0)
+            {
+                s.push(ver[v][i]);
+                mark[ver[v][i]] = 1;
+            }
+        }
+    }
 }
