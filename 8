@@ -12,7 +12,7 @@ void dfs(int v)
 		int i = s.top();
 
 		for (u = 0; u < n && a; )
-			if (gr[i][u] && used[u]) 
+			if (graph[i][u] && used[u]) 
 				a = 0;
 			else u++; 
 		if (!a) 
